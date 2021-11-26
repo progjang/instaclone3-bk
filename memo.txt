@@ -1,0 +1,27 @@
+git init
+git remote add oringin [address]
+npm init -y
+
+npm insall apollo-server graphql  
+npm i nodemon --save-dev
+
+babel : javascript complier
+npm install --save-dev @babel/core @babel/preset-env @babel/node
+
+*POSTGRESQL creating database
+
+npm install prisma -D
+npx prisma init
+* prisma/schema.prisma setting + model setting
+npx prisma migrate dev
+
+npm install @graphql-tools/schema @graphql-tools/load-files @graphql-tools/merge
+(for typeDefs+Query+Mutation => resolvers)
+(사용예시)
+import { makeExecutableSchema } from '@graphql-tools/schema'
+import { loadFilesSync } from '@graphql-tools/load-files'
+import { mergeResolvers, mergeTypeDefs } from '@graphql-tools/merge'
+
+npm i dotenv
+
+npm i bcrypt (for password hashing -> uglyPassword)
