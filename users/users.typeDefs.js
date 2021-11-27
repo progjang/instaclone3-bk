@@ -10,9 +10,6 @@ export default gql`
         createdAt: String!
         updatedAt: String!
     }
-    type Query {
-        seeProfile(id: Int!): User
-    }
     type Mutation {
         createUser(firstName:String! lastName:String username:String! email:String! password:String!): User    
     }

@@ -2,6 +2,7 @@ require("dotenv").config();
 const { ApolloServerPluginLandingPageGraphQLPlayground } = require("apollo-server-core");
 const { ApolloServer, gql } = require('apollo-server');
 import schema from "./schema";
+import { getUser } from "./users/users.utils";
 
 // The GraphQL schema
 
@@ -10,6 +11,11 @@ import schema from "./schema";
 
 const server = new ApolloServer({
   schema,
+  context: async({req}) => {
+    return {
+      loggedInUser: await getUser(req.headers.token),
+    };
+  },
   plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
 });
 

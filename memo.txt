@@ -25,3 +25,5 @@ import { mergeResolvers, mergeTypeDefs } from '@graphql-tools/merge'
 npm i dotenv
 
 npm i bcrypt (for password hashing -> uglyPassword)
+
+npm i jsonwebtoken (for token signing & verifying)
