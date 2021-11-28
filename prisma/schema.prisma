@@ -20,14 +20,16 @@ model Movie {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  firstName String
-  lastName  String?
-  username  String   @unique
-  email     String   @unique
-  password  String
-  bio       String?
-  avatar    String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id         Int      @id @default(autoincrement())
+  firstName  String
+  lastName   String?
+  username   String   @unique
+  email      String   @unique
+  password   String
+  bio        String?
+  avatar     String?
+  followings User[]   @relation("FollowRelation", references: [id])
+  followers  User[]   @relation("FollowRelation", references: [id])
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
 }

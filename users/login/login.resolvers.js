@@ -22,7 +22,6 @@ export default {
          }
          // issue Token
          const token = jwt.sign({id: user.id}, process.env.SECRET_KEY);
-         console.log(user, token);
          return {
              ok: true,
              error: "na",

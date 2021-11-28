@@ -3,6 +3,13 @@ import { protectedResolver } from "../users.utils";
 
 export default {
     Query: {
-        seeProfile: (_, {username}) => client.user.findUnique({where: {username}}),
+        seeProfile: (_, {username}) => client.user.findUnique({
+            where: {username},
+            include: {
+                followings: true,
+                followers: true,
+            }
+        
+        }),
     }
 }
